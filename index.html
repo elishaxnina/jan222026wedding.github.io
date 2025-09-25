@@ -561,7 +561,6 @@
             </h1>
             <div class="decorative-flourish"></div>
             <p class="wedding-date">January 22, 2026</p>
-            <p class="d-date">D-Date Approaching</p>
         </header>
     </div>
 
@@ -604,11 +603,10 @@
                     <h3 class="venue-title">Ceremony</h3>
                     <div class="venue-details">
                         <p class="venue-address">
-                            St. Mary's Cathedral<br>
-                            123 Church Street<br>
-                            Downtown, CA 90210
+                            San Roque Parish Church<br>Hernan Cortes St, Mandaue City<br>
+                            6014 Cebu, Philippines
                         </p>
-                        <p class="venue-time">4:00 PM</p>
+                        <p class="venue-time">2:00 PM</p>
                         <div class="maps-placeholder">
                             📍 Google Maps integration coming soon
                         </div>
@@ -620,9 +618,9 @@
                     <h3 class="venue-title">Reception</h3>
                     <div class="venue-details">
                         <p class="venue-address">
-                            Elegant Ballroom<br>
-                            456 Celebration Avenue<br>
-                            Grand Hall, CA 90211
+                            The Event Space<br>
+                            F. Cabahug Street, Panagdait<br>
+                            Cebu City 6000
                         </p>
                         <p class="venue-time">6:00 PM - 11:00 PM</p>
                         <div class="maps-placeholder">
@@ -646,8 +644,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="text">Facebook or Messenger Name</label>
+                    <input type="text" id="text" name="text" required>
                 </div>
                 
                 <div class="form-group">
@@ -658,18 +656,7 @@
                         <option value="no">Sorry, can't make it</option>
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="guests">Number of Guests (including yourself)</label>
-                    <select id="guests" name="guests" required>
-                        <option value="">Please select</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-                
+                                      
                 <button type="submit" class="rsvp-btn">Send RSVP</button>
             </form>
         </div>
@@ -685,7 +672,7 @@
     <script>
         // Countdown Timer
         function updateCountdown() {
-            const weddingDate = new Date('January 22, 2026 16:00:00').getTime();
+            const weddingDate = new Date('January 22, 2026 14:00:00').getTime();
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
