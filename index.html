@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elisha Niña & Greggy - Save the Date</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --black: #000000;
+            --gray: #545454;
+            --dark-burgundy: #4D0011;
+            --burgundy: #690D2B;
+            --bronze: #9B522B;
+            --cream: #f8f6f0;
+            --soft-white: #fefcf7;
+            --gold-accent: #d4af37;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-white) 100%);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Elegant texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><pattern id="elegantPattern" width="200" height="200" patternUnits="userSpaceOnUse"><circle cx="40" cy="40" r="2" fill="%234D0011" opacity="0.02"/><circle cx="160" cy="80" r="1.5" fill="%23690D2B" opacity="0.03"/><circle cx="80" cy="160" r="2.5" fill="%239B522B" opacity="0.02"/><path d="M100,50 Q120,70 100,90 Q80,70 100,50" fill="%23545454" opacity="0.01"/></pattern></defs><rect width="200" height="200" fill="url(%23elegantPattern)"/></svg>') repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 100px 0 80px;
+            position: relative;
+        }
+        
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            font-weight: 400;
+            color: var(--dark-burgundy);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(77, 0, 17, 0.1);
+            line-height: 1.2;
+        }
+        
+        .ampersand {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--bronze);
+            margin: 0 20px;
+            font-weight: 300;
+        }
+        
+        .decorative-flourish {
+            width: 300px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--bronze), var(--burgundy), var(--bronze), transparent);
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .decorative-flourish::before,
+        .decorative-flourish::after {
+            content: '✦';
+            position: absolute;
+            top: -12px;
+            color: var(--bronze);
+            font-size: 20px;
+        }
+        
+        .decorative-flourish::before {
+            left: -20px;
+        }
+        
+        .decorative-flourish::after {
+            right: -20px;
+        }
+        
+        .wedding-date {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gray);
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .d-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--burgundy);
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        
+        /* Save the Date Section */
+        .save-date-section {
+            background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 50%, var(--dark-burgundy) 100%);
+            color: var(--cream);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .save-date-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(155, 82, 43, 0.08) 0%, transparent 70%);
+            animation: etherealRotate 25s linear infinite;
+        }
+        
+        @keyframes etherealRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .save-date-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .save-date-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        .save-date-subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--bronze);
+        }
+        
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(248, 246, 240, 0.1);
+            border: 3px solid var(--bronze);
+            border-radius: 20px;
+            padding: 30px 25px;
+            min-width: 140px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .countdown-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: var(--cream);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--cream);
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: var(--bronze);
+            font-weight: 500;
+        }
+        
+        /* Venue Information */
+        .venue-section {
+            padding: 100px 0;
+            background: var(--soft-white);
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark-burgundy);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+        
+        .venue-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(77, 0, 17, 0.1);
+            text-align: center;
+            position: relative;
+            border: 2px solid rgba(155, 82, 43, 0.2);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .venue-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--bronze), var(--burgundy), var(--dark-burgundy), var(--bronze));
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .venue-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(77, 0, 17, 0.15);
+        }
+        
+        .venue-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .venue-icon {
+            font-size: 4rem;
+            color: var(--burgundy);
+            margin-bottom: 25px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .venue-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--dark-burgundy);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .venue-details {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .venue-address {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+        
+        .venue-time {
+            font-style: italic;
+            color: var(--burgundy);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .maps-placeholder {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(155, 82, 43, 0.1);
+            border-radius: 10px;
+            font-style: italic;
+            color: var(--bronze);
+            border: 1px dashed var(--bronze);
+        }
+        
+        /* RSVP Section */
+        .rsvp-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray) 50%, var(--black) 100%);
+            color: var(--cream);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .rsvp-section .section-title {
+            color: var(--cream);
+            margin-bottom: 30px;
+        }
+        
+        .section-subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--bronze);
+        }
+        
+        .rsvp-form {
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(248, 246, 240, 0.05);
+            padding: 50px;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(155, 82, 43, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            color: var(--bronze);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid rgba(155, 82, 43, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            color: var(--black);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--bronze);
+            box-shadow: 0 0 0 4px rgba(155, 82, 43, 0.2);
+            background: white;
+        }
+        
+        .rsvp-btn {
+            background: linear-gradient(45deg, var(--bronze), var(--burgundy));
+            color: var(--cream);
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 25px rgba(155, 82, 43, 0.3);
+            margin-top: 20px;
+        }
+        
+        .rsvp-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(155, 82, 43, 0.4);
+            background: linear-gradient(45deg, var(--burgundy), var(--dark-burgundy));
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-burgundy);
+            color: var(--cream);
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .footer-message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--bronze);
+        }
+        
+        .footer-hearts {
+            color: var(--bronze);
+            font-size: 2rem;
+            letter-spacing: 10px;
+        }
+        
+        /* Floating elements animation */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.08;
+            animation: elegantFloat 20s infinite linear;
+        }
+        
+        .floating-element.heart {
+            color: var(--burgundy);
+            font-size: 24px;
+        }
+        
+        .floating-element.star {
+            color: var(--bronze);
+            font-size: 18px;
+        }
+        
+        @keyframes elegantFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.08;
+            }
+            90% {
+                opacity: 0.08;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 3rem;
+            }
+            
+            .ampersand {
+                font-size: 2rem;
+                margin: 0 10px;
+            }
+            
+            .save-date-title {
+                font-size: 2.5rem;
+            }
+            
+            .countdown {
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 120px;
+                padding: 25px 20px;
+            }
+            
+            .countdown-number {
+                font-size: 2.2rem;
+            }
+            
+            .venue-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .venue-card {
+                padding: 40px 30px;
+            }
+            
+            .rsvp-form {
+                padding: 40px 30px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            .wedding-date {
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+            }
+            
+            .countdown-item {
+                min-width: 100px;
+                padding: 20px 15px;
+            }
+            
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element heart" style="left: 5%; animation-delay: 0s;">♥</div>
+        <div class="floating-element star" style="left: 15%; animation-delay: 3s;">✦</div>
+        <div class="floating-element heart" style="left: 25%; animation-delay: 6s;">♡</div>
+        <div class="floating-element star" style="left: 35%; animation-delay: 9s;">✧</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 12s;">♥</div>
+        <div class="floating-element star" style="left: 55%; animation-delay: 15s;">✦</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 18s;">♡</div>
+        <div class="floating-element star" style="left: 75%; animation-delay: 21s;">✧</div>
+        <div class="floating-element heart" style="left: 85%; animation-delay: 24s;">♥</div>
+        <div class="floating-element star" style="left: 95%; animation-delay: 27s;">✦</div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="couple-names">
+                Elisha Niña<span class="ampersand">&</span>Greggy
+            </h1>
+            <div class="decorative-flourish"></div>
+            <p class="wedding-date">January 22, 2026</p>
+            <p class="d-date">D-Date Approaching</p>
+        </header>
+    </div>
+
+    <section class="save-date-section">
+        <div class="container">
+            <div class="save-date-content">
+                <h2 class="save-date-title">Save the Date</h2>
+                <p class="save-date-subtitle">Join us as we begin our forever</p>
+                
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="venue-section">
+        <div class="container">
+            <h2 class="section-title">Wedding Details</h2>
+            <div class="decorative-flourish"></div>
+            
+            <div class="venue-grid">
+                <div class="venue-card">
+                    <div class="venue-icon">⛪</div>
+                    <h3 class="venue-title">Ceremony</h3>
+                    <div class="venue-details">
+                        <p class="venue-address">
+                            St. Mary's Cathedral<br>
+                            123 Church Street<br>
+                            Downtown, CA 90210
+                        </p>
+                        <p class="venue-time">4:00 PM</p>
+                        <div class="maps-placeholder">
+                            📍 Google Maps integration coming soon
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="venue-card">
+                    <div class="venue-icon">🏛️</div>
+                    <h3 class="venue-title">Reception</h3>
+                    <div class="venue-details">
+                        <p class="venue-address">
+                            Elegant Ballroom<br>
+                            456 Celebration Avenue<br>
+                            Grand Hall, CA 90211
+                        </p>
+                        <p class="venue-time">6:00 PM - 11:00 PM</p>
+                        <div class="maps-placeholder">
+                            📍 Google Maps integration coming soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title">RSVP</h2>
+            <p class="section-subtitle">Your presence would make our day complete</p>
+            
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-group">
+                    <label for="guestName">Full Name</label>
+                    <input type="text" id="guestName" name="guestName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendance">Will you be attending?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Please select</option>
+                        <option value="yes">Yes, I'll be there!</option>
+                        <option value="no">Sorry, can't make it</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Number of Guests (including yourself)</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="rsvp-btn">Send RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-message">With love, Elisha Niña & Greggy</p>
+            <div class="footer-hearts">♥ ✦ ♡ ✦ ♥</div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('January 22, 2026 16:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item" style="min-width: 300px;"><span class="countdown-number" style="font-size: 2rem;">💒</span><span class="countdown-label" style="font-size: 1.2rem; margin-top: 15px;">We\'re Married!</span></div>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form Handler
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const rsvpData = {
+                name: formData.get('guestName'),
+                email: formData.get('email'),
+                attendance: formData.get('attendance'),
+                guests: formData.get('guests'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Store RSVP data in memory
+            console.log('RSVP Data for Elisha Niña & Greggy:', rsvpData);
+            
+            // Show elegant success message
+            alert('Thank you for your RSVP! Elisha Niña & Greggy are delighted to hear from you. We will be in touch with more details soon. ✨');
+            
+            // Reset form with smooth transition
+            this.reset();
+        });
+
+        // Enhanced interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect for floating elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const elements = document.querySelectorAll('.floating-element');
+                elements.forEach((element, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+                });
+            });
+
+            // Add elegant hover effects to countdown items
+            const countdownItems = document.querySelectorAll('.countdown-item');
+            countdownItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.05) rotateY(5deg)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+                });
+            });
+
+            // Smooth scroll for better user experience
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add subtle animation when page loads
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
