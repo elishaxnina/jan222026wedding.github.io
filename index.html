@@ -240,9 +240,9 @@
             <h2 class="section-title">Dress Code</h2>
             <div class="decorative-flourish"></div>
             
-            <div class="dresscode-grid">
-                <img src="./photos/icons/footer dresscode-2.png"></img>
               
+            <div class="dresscode-grid">
+                <img src="./photos/icons/footer dresscode-2.png?"></img>
             </div>
             
         </div>
@@ -637,8 +637,8 @@
             { title: '♥ ✦ ♡ ✦ ♥', src: 'music/youbelongwithme.mp3' }
         ];
 
-       let currentSongIndex = 0;
-        let isPlaying = false;
+        let currentSongIndex = Math.floor(Math.random() * 5);
+        let isPlaying = true;
 
         const bgMusic = document.getElementById('bgMusic');
         const playBtn = document.getElementById('playBtn');
