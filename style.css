@@ -110,17 +110,18 @@ body::before {
 }
 
 .wedding-date {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'serif';
+    font-style: 'bold';
     font-size: 2rem;
     color: var(--dark-burgundy);
     font-weight: 600;
     letter-spacing: 3px;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
 }
 
 .d-date {
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', serif;
     font-size: 1.5rem;
     color: var(--cream);
     font-weight: 600;
@@ -161,7 +162,7 @@ body::before {
 }
 
 .countdown-number {
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: #f5f5dc;
@@ -172,7 +173,7 @@ body::before {
 }
 
 .countdown-label {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', serif;
     font-size: 0.7rem;
     text-transform: capitalize;
     letter-spacing: 1px;
@@ -365,7 +366,7 @@ body::before {
 .venue-icon {
     font-size: 4rem;
     color: var(--burgundy);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
 }
 
@@ -378,6 +379,7 @@ body::before {
 }
 
 .venue-details {
+    font-family: 'Montserrat', 'serif';
     color: var(--gray);
     line-height: 1.8;
     font-size: 1.1rem;
@@ -385,12 +387,12 @@ body::before {
 
 .venue-address {
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: var(--black);
 }
 
 .venue-time {
-    font-family:'Georgia', serif;
+    font-family:'Montserrat', serif;
     font-style: bold;
     color: var(--dark-burgundy);
     font-weight: 800;
