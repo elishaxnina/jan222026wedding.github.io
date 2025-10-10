@@ -31,6 +31,19 @@
         <div class="floating-element star" style="left: 75%; animation-delay: 3s;">✧</div>
         <div class="floating-element heart" style="left: 85%; animation-delay: 6s;">♥</div>
         <div class="floating-element star" style="left: 95%; animation-delay: 7s;">✦</div>
+        <div class="floating-element heart" style="left: 20%; animation-delay: 1s;">♥</div>
+        <div class="floating-element heart" style="left: 35%; animation-delay: 2s;">♥</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 3s;">♥</div>
+        <div class="floating-element heart" style="left: 55%; animation-delay: 4s;">♥</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 5s;">♥</div>
+        <div class="floating-element heart" style="left: 75%; animation-delay: 1s;">♥</div>
+        <div class="floating-element heart" style="left: 85%; animation-delay: 2s;">♥</div>
+        <div class="floating-element heart" style="left: 95%; animation-delay: 3s;">♥</div>
+        <div class="floating-element heart" style="left: 15%; animation-delay: 4s;">♥</div>
+        <div class="floating-element heart" style="left: 20%; animation-delay: 5s;">♥</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 5s;">♡</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 10s;">♡</div>
+        <div class="floating-element heart" style="left: 95%; animation-delay: 15s;">♡</div>
     </div>
 
     <div class="music-player">
@@ -42,7 +55,7 @@
             <i class="fas fa-music" id="playIcon"></i>
         </button>
         
-        <div class="song-info" id="songInfo">♥ ✦ ♡ ✦ ♥</div>
+        <div class="song-info" id="songInfo">✦ ♡ ✦</div>
         
         <button class="control-btn" id="nextBtn" title="Next song">
             <i class="fas fa-forward"></i>
@@ -139,7 +152,7 @@
                         <div class="venue-details">
                             <p class="venue-address">
                                 San Roque Parish Church<br>Hernan Cortes St, Mandaue City<br>
-                                6014 Cebu, Philippines
+                                Cebu 6014, Philippines
                             </p>
                             <p class="venue-time">2:00 PM</p>
                             <div class="map-container">
@@ -166,7 +179,7 @@
                             <p class="venue-address">
                                 The Event Space<br>
                                 F. Cabahug Street, Panagdait<br>
-                                Cebu City 6000
+                                Cebu City 6000, Philippines
                             </p>
                             <p class="venue-time">6:00 PM - 11:00 PM</p>
                             <div class="map-container">
@@ -633,15 +646,15 @@
         //music player section
         // Add your music files here
         const playlist = [
-            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/dancingonmyown.mp3' },
-            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/iloveyou.mp3' },
-            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/newlyweds.mp3' },
-            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/yellow.mp3' },
-            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/youbelongwithme.mp3' }
+            { title: '✦ ♡ ✦', src: 'music/dancingonmyown.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/iloveyou.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/newlyweds.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/yellow.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/youbelongwithme.mp3' }
         ];
 
         let currentSongIndex = Math.floor(Math.random() * 5);
-        let isPlaying = true;
+        let isPlaying = false;
 
         const bgMusic = document.getElementById('bgMusic');
         const playBtn = document.getElementById('playBtn');
@@ -702,6 +715,20 @@
                 currentSongIndex = (currentSongIndex + 1) % playlist.length;
                 loadSong(currentSongIndex);
                 bgMusic.play();
+            }
+        });
+        // Autoplay on first scroll
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled && !isPlaying) {
+                hasScrolled = true;
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    playIcon.className = 'fas fa-volume-up';
+                    playBtn.title = 'Mute music';
+                }).catch((error) => {
+                    console.log('Autoplay failed:', error);
+                });
             }
         });
     </script>
