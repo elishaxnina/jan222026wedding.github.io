@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
     <title>Elisha Niña & Greggy - Save the Date</title>
     
 </head>
@@ -31,7 +33,26 @@
         <div class="floating-element star" style="left: 95%; animation-delay: 7s;">✦</div>
     </div>
 
+    <div class="music-player">
+        <button class="control-btn" id="prevBtn" title="Previous song">
+            <i class="fas fa-backward"></i>
+        </button>
+        
+        <button class="control-btn play-btn" id="playBtn" title="Play music">
+            <i class="fas fa-music" id="playIcon"></i>
+        </button>
+        
+        <div class="song-info" id="songInfo">♥ ✦ ♡ ✦ ♥</div>
+        
+        <button class="control-btn" id="nextBtn" title="Next song">
+            <i class="fas fa-forward"></i>
+        </button>
+    </div>
+
+    <audio id="bgMusic" loop></audio>
+
     <header class="header">
+        
         <div class="container">
             <h1 class="couple-names">
                 Greggy<span class="ampersand">&</span>Elisha Niña
@@ -181,25 +202,37 @@
                 <div class="guest-details" id="guestDetails">
                     <div id="selectedGuest"></div>
 
-                    <div class="form-group">
-                        <label for="contactInput">Contact (Facebook/Messenger)</label>
-                        <input type="text" id="contactInput" name="contact" placeholder="Your Facebook or Messenger handle" required>
-                    </div>
+                    <div id="rsvpFormFields">
+                        <div class="form-group">
+                            <label for="contactInput">Contact (Facebook/Messenger)</label>
+                            <input type="text" id="contactInput" name="contact" placeholder="Your Facebook or Messenger handle" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="attendance">Will you be attending?</label>
-                        <select id="attendance" name="attendance" required>
-                            <option value="">Please select</option>
-                            <option value="yes">Yes, I'll be there! ✨</option>
-                            <option value="no">Sorry, can't make it 💔</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="attendance">Will you be attending?</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes, I'll be there! ✨</option>
+                                <option value="no">Sorry, can't make it 💔</option>
+                            </select>
+                        </div>
 
-                    <button type="submit" class="rsvp-btn">Submit RSVP</button>
+                        <button type="submit" class="rsvp-btn">Submit RSVP</button>
+                    </div>
                 </div>
             </form>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-icon" id="modalIcon">🎉</div>
+            <h3 id="modalTitle">Thank You!</h3>
+            <p id="modalMessage"></p>
+            <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
 
     <section class="dresscode-section">
@@ -292,9 +325,7 @@
         // CONFIGURATION - Replace with your Google Apps Script Web App URL
         // CONFIGURATION
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYbAWjOEgKdNWGvS2lD_MYTfmd4cFBiEVT5_vzyG62nSSQda73nyKJgMKxbGnrNIWs/exec';
-
         let selectedGuest = null;
-
         // DOM Elements
         const searchInput = document.getElementById('searchName');
         const searchResults = document.getElementById('searchResults');
@@ -303,6 +334,11 @@
         const contactInput = document.getElementById('contactInput');
         const attendanceSelect = document.getElementById('attendance');
         const alertMessage = document.getElementById('alertMessage');
+        const rsvpFormFields = document.getElementById('rsvpFormFields');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
 
         // Show alert message
         function showAlert(message, type = 'error') {
@@ -312,6 +348,26 @@
                 alertMessage.classList.remove('show');
             }, 5000);
         }
+
+        // Show modal
+        function showModal(icon, title, message) {
+            modalIcon.textContent = icon;
+            modalTitle.textContent = title;
+            modalMessage.innerHTML = message;
+            modalOverlay.classList.add('show');
+        }
+
+        // Close modal
+        function closeModal() {
+            modalOverlay.classList.remove('show');
+        }
+
+        // Close modal when clicking overlay
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
 
         // Search functionality with debounce
         let searchTimeout;
@@ -382,25 +438,46 @@
             searchResults.style.display = 'none';
             searchInput.value = guest.name;
 
-            // Display selected guest info
-            selectedGuestDiv.innerHTML = `
-                <div class="guest-info-card">
-                    <h3>✨ ${escapeHtml(guest.name)}</h3>
-                    <p><strong>Address:</strong> ${escapeHtml(guest.address || 'Not provided')}</p>
-                    ${guest.contact ? `<p><strong>Contact:</strong> ${escapeHtml(guest.contact)}</p>` : ''}
-                    ${guest.rsvp ? `<p class="rsvp-status"><strong>Current RSVP:</strong> ${escapeHtml(guest.rsvp)}</p>` : ''}
-                </div>
-            `;
+            // Check if guest has already responded
+            const hasResponded = guest.rsvp && (guest.rsvp.toLowerCase() === 'yes' || guest.rsvp.toLowerCase() === 'no');
 
-            // Pre-fill contact if available
-            if (guest.contact) {
-                contactInput.value = guest.contact;
+            if (hasResponded) {
+                // Guest already responded - show thank you message
+                const attendingMessage = guest.rsvp.toLowerCase() === 'yes' 
+                    ? `<div class="celebration-icon">🎊</div>
+                       <h3>Thank You, ${escapeHtml(guest.name)}!</h3>
+                       <p>You've already confirmed your attendance.</p>
+                       <p><strong>We can't wait to celebrate with you on January 22, 2026! ✨</strong></p>`
+                    : `<div class="celebration-icon">💝</div>
+                       <h3>Thank You, ${escapeHtml(guest.name)}</h3>
+                       <p>You've already responded to our invitation.</p>
+                       <p>You will be missed on our special day. ❤️</p>`;
+
+                selectedGuestDiv.innerHTML = `<div class="already-responded">${attendingMessage}</div>`;
+                rsvpFormFields.style.display = 'none';
             } else {
-                contactInput.value = '';
-            }
+                // Guest hasn't responded - show form
+                selectedGuestDiv.innerHTML = `
+                    <div class="guest-info-card">
+                        <h3>✨ ${escapeHtml(guest.name)}</h3>
+                        <p><strong>Address:</strong> ${escapeHtml(guest.address || 'Not provided')}</p>
+                        ${guest.contact ? `<p><strong>Contact:</strong> ${escapeHtml(guest.contact)}</p>` : ''}
+                    </div>
+                `;
 
-            // Reset attendance
-            attendanceSelect.value = '';
+                // Pre-fill contact if available
+                if (guest.contact) {
+                    contactInput.value = guest.contact;
+                } else {
+                    contactInput.value = '';
+                }
+
+                // Reset attendance
+                attendanceSelect.value = '';
+
+                // Show form fields
+                rsvpFormFields.style.display = 'block';
+            }
 
             // Show guest details section
             guestDetails.classList.add('show');
@@ -465,19 +542,31 @@
                 const data = await response.json();
 
                 if (data.status === 'success') {
-                    // Show success message
-                    const successMsg = attendance === 'yes'
-                        ? `Thank you, ${selectedGuest.name}! 🎉\n\nWe're so excited to celebrate with you on January 22, 2026!\n\nYou will receive more details soon.`
-                        : `Thank you for letting us know, ${selectedGuest.name}.\n\nYou will be missed on our special day. ❤️`;
-
-                    alert(successMsg);
+                    // Show success modal
+                    if (attendance === 'yes') {
+                        showModal(
+                            '🎉',
+                            `Thank you, ${selectedGuest.name}!`,
+                            `<p>We're so excited to celebrate with you on <strong>January 22, 2026!</strong></p>
+                             <p>You will receive more details soon.</p>`
+                        );
+                    } else {
+                        showModal(
+                            '💝',
+                            'Thank you for letting us know',
+                            `<p>You will be missed on our special day, ${selectedGuest.name}. ❤️</p>`
+                        );
+                    }
 
                     // Reset form
-                    this.reset();
-                    guestDetails.classList.remove('show');
-                    selectedGuest = null;
-                    selectedGuestDiv.innerHTML = '';
-                    searchInput.value = '';
+                    setTimeout(() => {
+                        this.reset();
+                        guestDetails.classList.remove('show');
+                        selectedGuest = null;
+                        selectedGuestDiv.innerHTML = '';
+                        searchInput.value = '';
+                        rsvpFormFields.style.display = 'block';
+                    }, 500);
                 } else {
                     showAlert('Error: ' + (data.message || 'Unknown error occurred'), 'error');
                 }
@@ -536,6 +625,81 @@
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
+        });
+
+        //music player section
+        // Add your music files here
+        const playlist = [
+            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/dancingonmyown.mp3' },
+            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/iloveyou.mp3' },
+            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/newlyweds.mp3' },
+            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/yellow.mp3' },
+            { title: '♥ ✦ ♡ ✦ ♥', src: 'music/youbelongwithme.mp3' }
+        ];
+
+       let currentSongIndex = 0;
+        let isPlaying = false;
+
+        const bgMusic = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const songInfo = document.getElementById('songInfo');
+
+        // Set initial volume
+        bgMusic.volume = 0.3;
+
+        // Load initial song
+        function loadSong(index) {
+            bgMusic.src = playlist[index].src;
+            songInfo.textContent = playlist[index].title;
+        }
+
+        loadSong(currentSongIndex);
+
+        // Play/Pause toggle
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                playIcon.className = 'fas fa-music';
+                playBtn.title = 'Play music';
+                songInfo.textContent = playlist[currentSongIndex].title;
+                isPlaying = false;
+            } else {
+                bgMusic.play();
+                playIcon.className = 'fas fa-volume-up';
+                playBtn.title = 'Mute music';
+                songInfo.textContent = playlist[currentSongIndex].title;
+                isPlaying = true;
+            }
+        });
+
+        // Previous song
+        prevBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                bgMusic.play();
+            }
+        });
+
+        // Next song
+        nextBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                bgMusic.play();
+            }
+        });
+
+        // Auto-play next song when current ends
+        bgMusic.addEventListener('ended', () => {
+            if (isPlaying) {
+                currentSongIndex = (currentSongIndex + 1) % playlist.length;
+                loadSong(currentSongIndex);
+                bgMusic.play();
+            }
         });
     </script>
 </body>

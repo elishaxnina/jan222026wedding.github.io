@@ -132,24 +132,28 @@ body::before {
 
 /* Countdown Timer */
 .countdown {
+    /* background: rgba(255, 255, 255, 0.1); */
     display: flex;
     justify-content: center;
     gap: 15px;
     margin: 40px auto;
     flex-wrap: wrap;
     max-width: 400px;
+    
+    
 }
 
 .countdown-item {
-    background: transparent;
-    border: 2px solid var(--gray);
+    /* background: transparent; */
+    background: rgba(255, 255, 255, 0.1);
+    /* border: 2px solid var(--gray); */
     border-radius: 8px;
     padding: 15px 10px;
     width: 80px;
     height: 80px;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,6 +165,7 @@ body::before {
     font-size: 1.5rem;
     font-weight: 600;
     color: #f5f5dc;
+    /* color:var(--cream-brown); */
     display: block;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     line-height: 1;
@@ -172,7 +177,7 @@ body::before {
     text-transform: capitalize;
     letter-spacing: 1px;
     margin-top: 8px;
-    color: var(--gray-2);
+    color: var(--cream-brown);
     font-weight: 500;
 }
 
@@ -411,17 +416,29 @@ body::before {
     filter: grayscale(0%) contrast(1);
 }
 
-/* RSVP Section */
+/* RSVP Section
 .rsvp-section {
-    /* background: linear-gradient(135deg, var(--cream-brown) 50%, var(--soft-white )100%); */
+    /* background: linear-gradient(135deg, var(--cream-brown) 50%, var(--soft-white )100%); 
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./photos/EXP_DSC04404.jpg?w=1600') center/cover fixed;
     color: var(--black);
     padding: 100px 0;
     text-align: center;
     position: relative;
+} */
+/* RSVP Section */
+.rsvp-section {
+    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #8B6F47 center/cover fixed; */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./photos/EXP_DSC04404.jpg?w=1600') center/cover fixed;
+    color: var(--black);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    min-height: 600px;
 }
 
 .rsvp-section .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
     color: var(--soft-white);
     margin-bottom: 30px;
 }
@@ -447,6 +464,7 @@ body::before {
 .form-group {
     position: relative;
     margin-bottom: 25px;
+    text-align: left;
 }
 
 .form-group label {
@@ -507,6 +525,7 @@ body::before {
     cursor: pointer;
     border-bottom: 1px solid #f0f0f0;
     transition: background 0.2s;
+    text-align: left;
 }
 
 .search-result-item:hover {
@@ -545,6 +564,11 @@ body::before {
     animation: fadeIn 0.4s ease;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .guest-info-card {
     background: linear-gradient(135deg, #fff5f7 0%, #ffe8ee 100%);
     padding: 25px;
@@ -569,6 +593,32 @@ body::before {
 .rsvp-status {
     font-weight: bold;
     color: var(--burgundy);
+}
+
+.already-responded {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #66bb6a;
+    text-align: center;
+}
+
+.already-responded h3 {
+    font-family: 'Cinzel', serif;
+    color: #2e7d32;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.already-responded p {
+    color: #1b5e20;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.already-responded .celebration-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
 .rsvp-btn {
@@ -599,6 +649,107 @@ body::before {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid var(--bronze);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--dark-burgundy);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.modal-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.modal-close-btn {
+    background: linear-gradient(45deg, var(--bronze), var(--burgundy));
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.modal-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(105, 13, 43, 0.3);
+}
+
+.alert-message {
+    display: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.alert-message.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.alert-message.error {
+    background: #ffebee;
+    color: #c62828;
+    border: 2px solid #ef5350;
+}
+
+.alert-message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #66bb6a;
 }
 
 @keyframes fadeIn {
@@ -661,7 +812,8 @@ body::before {
 .dresscode-grid img {
     max-width: 100%;
     height: auto;
-    width: 1000px;
+    width: auto;
+    /* width: 1000px; */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(77, 0, 17, 0.15);
 }
@@ -712,6 +864,134 @@ body::before {
 .floating-element.star {
     color: var(--bronze);
     font-size: 18px;
+}
+
+/*music*/
+ .music-player {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 15px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(125, 120, 120, 0.2);
+    transition: all 0.3s ease;
+}
+
+.music-player:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color:var(--cream-brown);
+    font-size: 16px;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.speaker-btn {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.muted {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.song-info {
+    color: var(--cream-brown);
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 120px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Speaker icon styles */
+.speaker-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.speaker-base {
+    width: 8px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.speaker-cone {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid white;
+    position: absolute;
+    left: 8px;
+    top: 4px;
+}
+
+.sound-wave {
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wave {
+    width: 3px;
+    height: 3px;
+    border: 2px solid white;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.wave:nth-child(1) { right: 0; width: 4px; height: 8px; }
+.wave:nth-child(2) { right: 5px; width: 5px; height: 12px; }
+
+.muted .sound-wave {
+    display: none;
+}
+
+.muted::after {
+    content: '✕';
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--cream-brown);
+    font-weight: bold;
 }
 
 @keyframes elegantFloat {
