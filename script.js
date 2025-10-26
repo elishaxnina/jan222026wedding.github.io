@@ -480,11 +480,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     
 
-// // Update countdown every second
-// setInterval(updateCountdown, 1000);'''
+/*
+        MUSIC
+*/
 
-// # Save the JavaScript file
-// with open('script.js', 'w', encoding='utf-8') as f:
-//     f.write(js_content)
+const playlist = [
+    { title: '✦ ♡ ✦', src: 'music/dancingonmyown.mp3' },
+    { title: '✦ ♡ ✦', src: 'music/iloveyou.mp3' },
+    { title: '✦ ♡ ✦', src: 'music/newlyweds.mp3' },
+    { title: '✦ ♡ ✦', src: 'music/yellow.mp3' },
+    { title: '✦ ♡ ✦', src: 'music/youbelongwithme.mp3' }
+];
 
-// print("✓ script.js created successfully")
+const audio = document.getElementById('bgMusic');
+let currentIndex = 0;
+
+// Start playing the first song
+function startPlaylist() {
+    audio.src = playlist[currentIndex].src;
+    audio.play();
+}
+
+// When a song ends, play the next one
+audio.addEventListener('ended', function() {
+    currentIndex++;
+    
+    // Loop back to the first song when playlist ends
+    if (currentIndex >= playlist.length) {
+        currentIndex = 0;
+    }
+    
+    audio.src = playlist[currentIndex].src;
+    audio.play();
+});
+
+// Start on user interaction (due to browser autoplay restrictions)
+window.addEventListener('click', function() {
+    startPlaylist();
+}, { once: true });
