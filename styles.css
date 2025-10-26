@@ -201,7 +201,7 @@ a:hover {
 }
 
 .divider {
-    width: 100px;
+    width: 150px;
     height: 1px;
     background: var(--color-dark);
 }
@@ -354,7 +354,7 @@ a:hover {
    =========================== */
 .ceremony-section {
     padding: 60px 20px;
-    background: var(--color-light);
+    background: var(--color-white);
 }
 
 .ceremony-grid {
@@ -378,13 +378,13 @@ a:hover {
     max-width: 350px;
     height: 450px;
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                url('photos/MS_DSC04126.jpg') center/cover no-repeat;
+                url('photos/MS_DSC04053.jpg') center/cover no-repeat;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     display: block;
 }
 
 .ceremony-details {
-    background: var(--color-light);
+    background: var(--color-white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -475,7 +475,7 @@ a:hover {
     max-width: 350px;
     height: 450px;
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                url('photos/MS_DSC04053.jpg') center/cover no-repeat;
+                url('photos/MS_DSC04126.jpg') center/cover no-repeat;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     display: block;
 }
@@ -603,10 +603,17 @@ a:hover {
 
 .dresscode-details h2 {
     font-family: var(--font-serif, 'Georgia', serif);
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 10px;
+    font-weight: 800;
 }
 
+.dresscode-details h3 {
+    font-family: var(--font-serif, 'Georgia', serif);
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
 .dresscode-palettes {
     display: flex;
     gap: 10px;
@@ -628,17 +635,30 @@ a:hover {
 .swatch.burgundy { background: #7B2330; }
 .swatch.champagne { background: #F7E7CE; }
 
-.guest-name {
+.guest-prin {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
+    color: black;
+}
+.guest-guest {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    color: black;
+}
+
+.dress-desc {
     color: #101010;
+    font-size: 18px;
+    margin-bottom: 6px;
 }
 
 .dresscode-link {
-    color: #7B2330;
-    font-size: 16px;
-    font-weight: 600;
+    color: #881030;
+    font-size: 15px;
+    font-weight: 400;
     text-decoration: underline;
 }
 
@@ -662,14 +682,14 @@ a:hover {
 
 .dresscode-video-card video {
     width: 100%;
-    max-width: 350px;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
+    max-width: 280px;           /* Portrait width for mobile */
+    height: 500px;              /* Fixed portrait height */
+    object-fit: cover;          /* Crops to fill container */
+    object-position: center;    /* Centers the crop */
     border-radius: 18px;
     background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
-
 /* ===========================
    COUNTDOWN TIMER
    =========================== */
@@ -896,7 +916,7 @@ a:hover {
 }
 
 .photo-section {
-    background: var(--color-white);
+    background: var(--color-light);
     padding: 60px 20px 40px;
 }
 
@@ -1181,8 +1201,8 @@ footer {
     }
     
     .dresscode-video-card video {
-        width: 400px;
-        max-height: 600px;
+        max-width: 320px;       /* Slightly wider on tablets */
+        height: 550px;          /* Taller on tablets */
     }
     
     .carousel-container {
@@ -1325,6 +1345,10 @@ footer {
         font-size: 46px;
     }
     
+    .dresscode-video-card video {
+        max-width: 350px;       /* Desktop portrait width */
+        height: 600px;          /* Desktop portrait height */
+    }
     .carousel-slide img {
         height: 600px;
     }
@@ -1373,6 +1397,10 @@ footer {
     
     .ceremony-section, .reception-section {
         padding: 60px 0;
+    }
+     .dresscode-video-card video {
+        max-width: 400px;       /* Maximum portrait width */
+        height: 600px;          /* Maximum portrait height */
     }
 }
 
@@ -1459,7 +1487,7 @@ footer {
         font-size: 20px;
     }
     
-    .venue-name, .guest-name {
+    .venue-name, .guest-prin, .guest-guest {
         font-size: 18px;
     }
     
@@ -1491,5 +1519,15 @@ footer {
     
     .footer-message {
         font-size: 1.5rem;
+    }
+
+    .dresscode-video-card {
+        padding: 20px 10px;
+        min-height: auto;
+    }
+    
+    .dresscode-video-card video {
+        max-width: 260px;       /* Compact mobile width */
+        height: 450px;          /* Compact mobile height */
     }
 }
