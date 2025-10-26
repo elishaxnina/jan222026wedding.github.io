@@ -1,0 +1,130 @@
+
+# Create the HTML structure for the wedding website
+html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soria & Antoine | 10.14.25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#story">Our Story</a>
+            <a href="#travel">Travel & Stay</a>
+            <a href="#registry">Registry</a>
+        </div>
+        <div class="nav-center">
+            <a href="#home" class="nav-title">S&A 10.14.25</a>
+        </div>
+        <div class="nav-right">
+            <a href="#rsvp" class="btn-rsvp">RSVP</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">We're Getting Married!</p>
+            <h1 class="hero-title">Soria & Antoine</h1>
+            <p class="hero-date">10 . 14 . 25</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider"></div>
+                <h2>See how it all started</h2>
+                <div class="divider"></div>
+            </div>
+            <button class="btn-dark">Our Story</button>
+        </div>
+    </section>
+
+    <!-- Join Us / RSVP Section -->
+    <section id="join" class="join-section">
+        <div class="join-overlay">
+            <p class="join-subtitle">Join Us</p>
+            <h2 class="join-title">We hope you can make it!</h2>
+            <a href="#rsvp" class="btn-light">RSVP</a>
+        </div>
+    </section>
+
+    <!-- Ceremony Section -->
+    <section id="ceremony" class="ceremony-section">
+        <div class="ceremony-grid">
+            <div class="ceremony-image">
+                <!-- Background image set in CSS -->
+            </div>
+            <div class="ceremony-details">
+                <h2>Ceremony</h2>
+                <p class="time">4:00 PM</p>
+                <div class="location-details">
+                    <p class="venue-name">Grace Church</p>
+                    <p class="address">123 Demo St.</p>
+                    <p class="address">Flagstaff, AZ 12345</p>
+                    <a href="#" class="map-link">Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception Section -->
+    <section id="reception" class="reception-section">
+        <div class="reception-grid">
+            <div class="reception-details">
+                <h2>Reception</h2>
+                <p class="time">4:30 PM - 10:00 PM</p>
+                <div class="location-details">
+                    <p class="venue-name">The Barrel Keg</p>
+                    <p class="address">123 Demo St.</p>
+                    <p class="address">Flagstaff, AZ 12345</p>
+                    <a href="#" class="map-link">Map</a>
+                </div>
+            </div>
+            <div class="reception-image">
+                <!-- Background image set in CSS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Questions?</p>
+                <a href="mailto:contact@example.com">Email Us</a>
+            </div>
+            <div class="footer-center">
+                <a href="#ceremony">Ceremony & Reception</a>
+                <a href="#travel">Travel & Stay</a>
+                <a href="#registry">Registry</a>
+                <a href="#rsvp">RSVP</a>
+            </div>
+            <div class="footer-right">
+                <p>Share</p>
+                <p>#SA2025</p>
+            </div>
+        </div>
+        <div class="footer-credits">
+            <p>Made with <a href="https://www.squarespace.com" target="_blank">Squarespace</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- ''' -->
+
+<!-- # Save the HTML file
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("✓ index.html created successfully") -->

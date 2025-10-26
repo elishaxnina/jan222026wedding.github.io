@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <title>Elisha Niña & Greggy - Save the Date</title>
+    
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element heart" style="left: 5%; animation-delay: 0s;">♥</div>
+        <div class="floating-element star" style="left: 15%; animation-delay: 3s;">✦</div>
+        <div class="floating-element heart" style="left: 25%; animation-delay: 6s;">♡</div>
+        <div class="floating-element star" style="left: 35%; animation-delay: 9s;">✧</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 12s;">♥</div>
+        <div class="floating-element star" style="left: 55%; animation-delay: 15s;">✦</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 18s;">♡</div>
+        <div class="floating-element star" style="left: 75%; animation-delay: 21s;">✧</div>
+        <div class="floating-element heart" style="left: 85%; animation-delay: 24s;">♥</div>
+        <div class="floating-element star" style="left: 95%; animation-delay: 27s;">✦</div>
+        <div class="floating-element heart" style="left: 5%; animation-delay: 0s;">♥</div>
+        <div class="floating-element star" style="left: 15%; animation-delay: 1s;">✦</div>
+        <div class="floating-element heart" style="left: 25%; animation-delay: 6s;">♡</div>
+        <div class="floating-element star" style="left: 35%; animation-delay: 9s;">✧</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 12s;">♥</div>
+        <div class="floating-element star" style="left: 55%; animation-delay: 10s;">✦</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 15s;">♡</div>
+        <div class="floating-element star" style="left: 75%; animation-delay: 3s;">✧</div>
+        <div class="floating-element heart" style="left: 85%; animation-delay: 6s;">♥</div>
+        <div class="floating-element star" style="left: 95%; animation-delay: 7s;">✦</div>
+        <div class="floating-element heart" style="left: 20%; animation-delay: 1s;">♥</div>
+        <div class="floating-element heart" style="left: 35%; animation-delay: 2s;">♥</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 3s;">♥</div>
+        <div class="floating-element heart" style="left: 55%; animation-delay: 4s;">♥</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 5s;">♥</div>
+        <div class="floating-element heart" style="left: 75%; animation-delay: 1s;">♥</div>
+        <div class="floating-element heart" style="left: 85%; animation-delay: 2s;">♥</div>
+        <div class="floating-element heart" style="left: 95%; animation-delay: 3s;">♥</div>
+        <div class="floating-element heart" style="left: 15%; animation-delay: 4s;">♥</div>
+        <div class="floating-element heart" style="left: 20%; animation-delay: 5s;">♥</div>
+        <div class="floating-element heart" style="left: 45%; animation-delay: 5s;">♡</div>
+        <div class="floating-element heart" style="left: 65%; animation-delay: 10s;">♡</div>
+        <div class="floating-element heart" style="left: 95%; animation-delay: 15s;">♡</div>
+    </div>
+
+    <div class="music-player">
+        <button class="control-btn" id="prevBtn" title="Previous song">
+            <i class="fas fa-backward"></i>
+        </button>
+        
+        <button class="control-btn play-btn" id="playBtn" title="Play music">
+            <i class="fas fa-music" id="playIcon"></i>
+        </button>
+        
+        <div class="song-info" id="songInfo">✦ ♡ ✦</div>
+        
+        <button class="control-btn" id="nextBtn" title="Next song">
+            <i class="fas fa-forward"></i>
+        </button>
+    </div>
+
+    <audio id="bgMusic" loop></audio>
+
+    <header class="header">
+        
+        <div class="container">
+            <h1 class="couple-names">
+                Greggy<span class="ampersand">&</span>Elisha Niña
+            </h1>
+            <div class="decorative-flourish"></div>
+            <p class="wedding-date">January 22, 2026</p>
+            <p class="d-date">Save the Date</p>
+            
+            <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+        </div>
+    </header>
+
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Our Journey Together</h2>
+            <div class="decorative-flourish"></div>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper" id="carouselWrapper">
+                    <div class="carousel-slide">
+                       
+                        <img src="./photos/MS_DSC04191.jpg?w=900&h=600&fit=crop" alt="Couple Photo 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/MS_DSC04053.jpg?w=900&h=600&fit=crop" alt="Couple Photo 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/MS_DSC04163.jpg?w=900&h=600&fit=crop" alt="Couple Photo 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/EXP_DSC04451.jpg?w=900&h=600&fit=crop" alt="Couple Photo 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/EXP_DSC04087.jpg?w=900&h=600&fit=crop" alt="Couple Photo 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/EXP_DSC04300.jpg?w=900&h=600&fit=crop" alt="Couple Photo 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./photos/EXP_DSC04557.jpg?w=900&h=600&fit=crop" alt="Couple Photo 4">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                
+                <div class="carousel-indicators">
+                    <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="venue-section">
+        <div class="container">
+            <h2 class="section-title">Wedding Details</h2>
+            <div class="decorative-flourish"></div>
+            
+            <div class="venue-grid">
+                <div class="venue-card ceremony-card">
+                    <div class="venue-card-overlay"></div>
+                    <div class="venue-content">
+                        <div class="venue-icon">⛪</div>
+                        <h3 class="venue-title">Ceremony</h3>
+                        <div class="venue-details">
+                            <p class="venue-address">
+                                San Roque Parish Church<br>Hernan Cortes St, Mandaue City<br>
+                                Cebu 6014, Philippines
+                            </p>
+                            <p class="venue-time">2:00 PM</p>
+                            <div class="map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.1962868544183!2d123.92188647502357!3d10.326170889796508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9990423f191c5%3A0x557b65e9a166cce3!2sSan%20Roque%20Parish%20Church!5e0!3m2!1sen!2stw!4v1759937566484!5m2!1sen!2stw"
+                                    width="100%" 
+                                    height="200" 
+                                    style="border:0; border-radius: 10px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="venue-card reception-card">
+                    <div class="venue-card-overlay"></div>
+                    <div class="venue-content">
+                        <div class="venue-icon">🏛️</div>
+                        <h3 class="venue-title">Reception</h3>
+                        <div class="venue-details">
+                            <p class="venue-address">
+                                The Event Space<br>
+                                F. Cabahug Street, Panagdait<br>
+                                Cebu City 6000, Philippines
+                            </p>
+                            <p class="venue-time">6:00 PM - 11:00 PM</p>
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.1942697041354!2d123.91420747502367!3d10.326332489796409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9990d6cbfecfd%3A0x2e28fdd2e5431af6!2sThe%20Event%20Space!5e0!3m2!1sen!2stw!4v1759937618286!5m2!1sen!2stw"
+                                    width="100%" 
+                                    height="200" 
+                                    style="border:0; border-radius: 10px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title">RSVP</h2>
+            <p class="section-subtitle">Please confirm your attendance</p>
+
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="alert-message" id="alertMessage"></div>
+
+                <div class="form-group">
+                    <label for="searchName">Search Your Name</label>
+                    <input type="text" id="searchName" name="searchName" placeholder="Start typing your name..." autocomplete="off" required>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+
+                <div class="guest-details" id="guestDetails">
+                    <div id="selectedGuest"></div>
+
+                    <div id="rsvpFormFields">
+                        <div class="form-group">
+                            <label for="contactInput">Contact (Facebook/Messenger)</label>
+                            <input type="text" id="contactInput" name="contact" placeholder="Your Facebook or Messenger handle" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendance">Will you be attending?</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes, I'll be there! ✨</option>
+                                <option value="no">Sorry, can't make it 💔</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="rsvp-btn">Submit RSVP</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-icon" id="modalIcon">🎉</div>
+            <h3 id="modalTitle">Thank You!</h3>
+            <p id="modalMessage"></p>
+            <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+
+    <section class="dresscode-section">
+        <div class="container">
+            <h2 class="section-title">Dress Code</h2>
+            <div class="decorative-flourish"></div>
+            
+              
+            <div class="dresscode-grid">
+                <img src="./photos/icons/footer dresscode-2.png?"></img>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-message">With love,</p>
+            <p class="footer-message"> Greggy & Elisha Niña</p>
+            <div class="footer-hearts">♥ ✦ ♡ ✦ ♥</div>
+        </div>
+    </footer>
+
+    <script>
+       
+
+        // Photo Carousel
+        let currentSlide = 0;
+        const wrapper = document.getElementById('carouselWrapper');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = document.querySelectorAll('.carousel-slide').length;
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto-advance carousel
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+
+        
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('show');
+            }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('January 22, 2026 14:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                const countdownElement = document.getElementById('countdown');
+                countdownElement.innerHTML = '<div class="countdown-item" style="min-width: 200px; grid-column: 1/-1;"><span class="countdown-number" style="font-size: 1.5rem;">💒</span><span class="countdown-label" style="font-size: 0.9rem; margin-top: 10px;">We\'re Married!</span></div>';
+            }
+        } 
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // CONFIGURATION - Replace with your Google Apps Script Web App URL
+        // CONFIGURATION
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYbAWjOEgKdNWGvS2lD_MYTfmd4cFBiEVT5_vzyG62nSSQda73nyKJgMKxbGnrNIWs/exec';
+        let selectedGuest = null;
+        // DOM Elements
+        const searchInput = document.getElementById('searchName');
+        const searchResults = document.getElementById('searchResults');
+        const guestDetails = document.getElementById('guestDetails');
+        const selectedGuestDiv = document.getElementById('selectedGuest');
+        const contactInput = document.getElementById('contactInput');
+        const attendanceSelect = document.getElementById('attendance');
+        const alertMessage = document.getElementById('alertMessage');
+        const rsvpFormFields = document.getElementById('rsvpFormFields');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+
+        // Show alert message
+        function showAlert(message, type = 'error') {
+            alertMessage.textContent = message;
+            alertMessage.className = `alert-message ${type} show`;
+            setTimeout(() => {
+                alertMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show modal
+        function showModal(icon, title, message) {
+            modalIcon.textContent = icon;
+            modalTitle.textContent = title;
+            modalMessage.innerHTML = message;
+            modalOverlay.classList.add('show');
+        }
+
+        // Close modal
+        function closeModal() {
+            modalOverlay.classList.remove('show');
+        }
+
+        // Close modal when clicking overlay
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Search functionality with debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const searchTerm = this.value.trim();
+
+            if (searchTerm.length < 2) {
+                searchResults.innerHTML = '';
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: {
+                            'Content-Type': 'text/plain',
+                        },
+                        body: JSON.stringify({
+                            action: 'searchGuests',
+                            searchTerm: searchTerm
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.status === 'success' && data.results && data.results.length > 0) {
+                        searchResults.innerHTML = data.results.map(guest => `
+                            <div class="search-result-item" data-guest='${JSON.stringify(guest).replace(/'/g, "&apos;")}'>
+                                <strong>${escapeHtml(guest.name)}</strong><br>
+                                <small>${escapeHtml(guest.address || '')}</small>
+                            </div>
+                        `).join('');
+                        searchResults.style.display = 'block';
+
+                        // Add click handlers
+                        document.querySelectorAll('.search-result-item').forEach(item => {
+                            item.addEventListener('click', function() {
+                                const guestData = JSON.parse(this.getAttribute('data-guest'));
+                                selectGuest(guestData);
+                            });
+                        });
+                    } else {
+                        searchResults.innerHTML = '<div class="no-results">No guests found matching your search</div>';
+                        searchResults.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Search error:', error);
+                    searchResults.innerHTML = '<div class="error-message">Error searching. Please try again.</div>';
+                    searchResults.style.display = 'block';
+                }
+            }, 300);
+        });
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Select guest from search results
+        function selectGuest(guest) {
+            selectedGuest = guest;
+            searchResults.style.display = 'none';
+            searchInput.value = guest.name;
+
+            // Check if guest has already responded
+            const hasResponded = guest.rsvp && (guest.rsvp.toLowerCase() === 'yes' || guest.rsvp.toLowerCase() === 'no');
+
+            if (hasResponded) {
+                // Guest already responded - show thank you message
+                const attendingMessage = guest.rsvp.toLowerCase() === 'yes' 
+                    ? `<div class="celebration-icon">🎊</div>
+                       <h3>Thank You, ${escapeHtml(guest.name)}!</h3>
+                       <p>You've already confirmed your attendance.</p>
+                       <p><strong>We can't wait to celebrate with you on January 22, 2026! ✨</strong></p>`
+                    : `<div class="celebration-icon">💝</div>
+                       <h3>Thank You, ${escapeHtml(guest.name)}</h3>
+                       <p>You've already responded to our invitation.</p>
+                       <p>You will be missed on our special day. ❤️</p>`;
+
+                selectedGuestDiv.innerHTML = `<div class="already-responded">${attendingMessage}</div>`;
+                rsvpFormFields.style.display = 'none';
+            } else {
+                // Guest hasn't responded - show form
+                selectedGuestDiv.innerHTML = `
+                    <div class="guest-info-card">
+                        <h3>✨ ${escapeHtml(guest.name)}</h3>
+                        <p><strong>Address:</strong> ${escapeHtml(guest.address || 'Not provided')}</p>
+                        ${guest.contact ? `<p><strong>Contact:</strong> ${escapeHtml(guest.contact)}</p>` : ''}
+                    </div>
+                `;
+
+                // Pre-fill contact if available
+                if (guest.contact) {
+                    contactInput.value = guest.contact;
+                } else {
+                    contactInput.value = '';
+                }
+
+                // Reset attendance
+                attendanceSelect.value = '';
+
+                // Show form fields
+                rsvpFormFields.style.display = 'block';
+            }
+
+            // Show guest details section
+            guestDetails.classList.add('show');
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validate guest selection
+            if (!selectedGuest) {
+                showAlert('Please search and select your name from the guest list first.', 'error');
+                searchInput.focus();
+                return;
+            }
+
+            // Validate attendance
+            const attendance = attendanceSelect.value;
+            if (!attendance) {
+                showAlert('Please select whether you will be attending.', 'error');
+                attendanceSelect.focus();
+                return;
+            }
+
+            // Validate contact
+            const contact = contactInput.value.trim();
+            if (!contact) {
+                showAlert('Please provide your contact information.', 'error');
+                contactInput.focus();
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = this.querySelector('.rsvp-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                    },
+                    body: JSON.stringify({
+                        action: 'updateRSVP',
+                        name: selectedGuest.name,
+                        contact: contact,
+                        rsvp: attendance === 'yes' ? 'Yes' : 'No',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    // Show success modal
+                    if (attendance === 'yes') {
+                        showModal(
+                            '🎉',
+                            `Thank you, ${selectedGuest.name}!`,
+                            `<p>We're so excited to celebrate with you on <strong>January 22, 2026!</strong></p>
+                             <p>You will receive more details soon.</p>`
+                        );
+                    } else {
+                        showModal(
+                            '💝',
+                            'Thank you for letting us know',
+                            `<p>You will be missed on our special day, ${selectedGuest.name}. ❤️</p>`
+                        );
+                    }
+
+                    // Reset form
+                    setTimeout(() => {
+                        this.reset();
+                        guestDetails.classList.remove('show');
+                        selectedGuest = null;
+                        selectedGuestDiv.innerHTML = '';
+                        searchInput.value = '';
+                        rsvpFormFields.style.display = 'block';
+                    }, 500);
+                } else {
+                    showAlert('Error: ' + (data.message || 'Unknown error occurred'), 'error');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                showAlert('There was an error submitting your RSVP. Please try again or contact us directly.', 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Enhanced interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect for floating elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const elements = document.querySelectorAll('.floating-element');
+                elements.forEach((element, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+                });
+            });
+
+            // Add elegant hover effects to countdown items
+            const countdownItems = document.querySelectorAll('.countdown-item');
+            countdownItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.05) rotateY(5deg)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+                });
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        //music player section
+        // Add your music files here
+        const playlist = [
+            { title: '✦ ♡ ✦', src: 'music/dancingonmyown.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/iloveyou.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/newlyweds.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/yellow.mp3' },
+            { title: '✦ ♡ ✦', src: 'music/youbelongwithme.mp3' }
+        ];
+
+        let currentSongIndex = Math.floor(Math.random() * 5);
+        let isPlaying = false;
+
+        const bgMusic = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const songInfo = document.getElementById('songInfo');
+
+        // Set initial volume
+        bgMusic.volume = 0.3;
+
+        // Load initial song
+        function loadSong(index) {
+            bgMusic.src = playlist[index].src;
+            songInfo.textContent = playlist[index].title;
+        }
+
+        loadSong(currentSongIndex);
+
+        // Play/Pause toggle
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                playIcon.className = 'fas fa-music';
+                playBtn.title = 'Play music';
+                songInfo.textContent = playlist[currentSongIndex].title;
+                isPlaying = false;
+            } else {
+                bgMusic.play();
+                playIcon.className = 'fas fa-volume-up';
+                playBtn.title = 'Mute music';
+                songInfo.textContent = playlist[currentSongIndex].title;
+                isPlaying = true;
+            }
+        });
+
+        // Previous song
+        prevBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                bgMusic.play();
+            }
+        });
+
+        // Next song
+        nextBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                bgMusic.play();
+            }
+        });
+
+        // Auto-play next song when current ends
+        bgMusic.addEventListener('ended', () => {
+            if (isPlaying) {
+                currentSongIndex = (currentSongIndex + 1) % playlist.length;
+                loadSong(currentSongIndex);
+                bgMusic.play();
+            }
+        });
+        // Autoplay on first scroll
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled && !isPlaying) {
+                hasScrolled = true;
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    playIcon.className = 'fas fa-volume-up';
+                    playBtn.title = 'Mute music';
+                }).catch((error) => {
+                    console.log('Autoplay failed:', error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
