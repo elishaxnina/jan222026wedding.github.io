@@ -65,10 +65,20 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
+    /* backdrop-filter: blur(10px); */
+    /* background: rgba(255, 255, 255, 0.95); */
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    will-change: top;
+}
+/* Class to hide navbar */
+.navbar.nav-hidden {
+    top: -100px; /* Adjust based on your navbar height */
+}
+
+/* Ensure navbar shows when at top of page */
+.navbar.nav-visible {
+    top: 0;
 }
 
 .nav-left, .nav-right {
@@ -1054,17 +1064,24 @@ footer {
         width: 75px;
         height: 75px;
     }
+    .navbar {
+        transition: top 0.3s ease-in-out;
+    }
+    
+    .navbar.nav-hidden {
+        top: -80px; /* Adjust for mobile navbar height */
+    }
 }
 
 
 /* Tablets and Small Desktops (min-width: 768px) */
 @media (min-width: 768px) {
     .navbar {
-        padding: 25px 40px;
+        padding: 20px 20px;
     }
     
     .nav-title {
-        font-size: 32px;
+        font-size: 20px;
     }
     
     .navbar a {

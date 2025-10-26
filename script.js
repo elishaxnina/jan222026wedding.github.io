@@ -518,3 +518,4 @@ audio.addEventListener('ended', function() {
 window.addEventListener('click', function() {
     startPlaylist();
 }, { once: true });
+
