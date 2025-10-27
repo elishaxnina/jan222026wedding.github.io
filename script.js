@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    setInterval(() => { moveCarousel(1); }, 5000);
+    setInterval(moveCarousel, 5000);
 
     // COUNTDOWN TIMER
     function updateCountdown() {
