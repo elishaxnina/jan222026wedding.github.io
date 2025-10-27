@@ -146,8 +146,12 @@ setInterval(() => {
 // ===========================
 // COUNTDOWN TIMER
 // ===========================
+// ===========================
+// COUNTDOWN TIMER - Mobile Compatible
+// ===========================
 function updateCountdown() {
-    const weddingDate = new Date('January 22, 2026 14:00:00').getTime();
+    // Use ISO 8601 format for better mobile browser compatibility
+    const weddingDate = new Date('2026-01-22T14:00:00+08:00').getTime(); // PHT timezone
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
@@ -157,18 +161,35 @@ function updateCountdown() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
+        // Update DOM elements
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        if (daysEl) daysEl.textContent = days;
+        if (hoursEl) hoursEl.textContent = hours;
+        if (minutesEl) minutesEl.textContent = minutes;
+        if (secondsEl) secondsEl.textContent = seconds;
     } else {
         const countdownElement = document.getElementById('countdown');
-        countdownElement.innerHTML = '<div class="countdown-item" style="min-width: 200px; grid-column: 1/-1;"><span class="countdown-number" style="font-size: 1.5rem;">💒</span><span class="countdown-label" style="font-size: 0.9rem; margin-top: 10px;">We\'re Married!</span></div>';
+        if (countdownElement) {
+            countdownElement.innerHTML = '<div class="countdown-item" style="min-width: 200px; grid-column: 1/-1;"><span class="countdown-number" style="font-size: 1.5rem;">💒</span><span class="countdown-label" style="font-size: 0.9rem; margin-top: 10px;">We\'re Married!</span></div>';
+        }
     }
-} 
+}
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// Ensure DOM is loaded before starting countdown
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    });
+} else {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
 
 /*
     RSVP
@@ -500,3 +521,35 @@ window.addEventListener('click', function() {
     startPlaylist();
 }, { once: true });
 
+// ===========================
+// MOBILE TOUCH SUPPORT FOR CAROUSEL
+// ===========================
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+if (carouselContainer) {
+    carouselContainer.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselContainer.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - next slide
+        moveCarousel(1);
+    }
+    
+    if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - previous slide
+        moveCarousel(-1);
+    }
+}
