@@ -16,23 +16,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===========================
-// NAVBAR SCROLL EFFECT
-// ===========================
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
 
 // ===========================
 // FADE-IN ANIMATION ON SCROLL
@@ -78,36 +61,18 @@ function handleRSVP(event) {
     alert('Thank you for your RSVP!');
 }
 
-// ===========================
-// MOBILE MENU TOGGLE (Optional)
-// ===========================
-function createMobileMenu() {
-    if (window.innerWidth <= 768) {
-        const navbar = document.querySelector('.navbar');
-        const navLinks = navbar.querySelectorAll('a');
-        
-        // Add click handlers to close menu after selection
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Menu closing logic if you implement hamburger menu
-            });
-        });
-    }
-}
 
-window.addEventListener('resize', createMobileMenu);
-createMobileMenu();
 
 // ===========================
 // PARALLAX EFFECT FOR HERO
 // ===========================
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    if (hero && scrolled < hero.offsetHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// window.addEventListener('scroll', () => {
+//     const hero = document.querySelector('.hero');
+//     const scrolled = window.pageYOffset;
+//     if (hero && scrolled < hero.offsetHeight) {
+//         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+//     }
+// });
 
 // ===========================
 // CAROUSEL
@@ -137,12 +102,10 @@ function updateCarousel() {
 }
 
 // Auto-advance carousel
-setInterval(() => {
-    moveCarousel(1);
-}, 5000);
-
-
-
+// setInterval(() => {
+//     moveCarousel(1);
+// }, 5000);
+setInterval(moveCarousel,5000);
 // ===========================
 // COUNTDOWN TIMER
 // ===========================
@@ -150,46 +113,45 @@ setInterval(() => {
 // COUNTDOWN TIMER - Mobile Compatible
 // ===========================
 function updateCountdown() {
-    // Use ISO 8601 format for better mobile browser compatibility
-    const weddingDate = new Date('2026-01-22T14:00:00+08:00').getTime(); // PHT timezone
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+    // Set the target date and time
+    var weddingDate = new Date('2026-01-22T14:00:00+08:00').getTime();
+    var now = new Date().getTime();
+    var distance = weddingDate - now;
 
     if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Update DOM elements
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-
-        if (daysEl) daysEl.textContent = days;
-        if (hoursEl) hoursEl.textContent = hours;
-        if (minutesEl) minutesEl.textContent = minutes;
-        if (secondsEl) secondsEl.textContent = seconds;
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
     } else {
-        const countdownElement = document.getElementById('countdown');
-        if (countdownElement) {
-            countdownElement.innerHTML = '<div class="countdown-item" style="min-width: 200px; grid-column: 1/-1;"><span class="countdown-number" style="font-size: 1.5rem;">💒</span><span class="countdown-label" style="font-size: 0.9rem; margin-top: 10px;">We\'re Married!</span></div>';
-        }
+        document.getElementById('countdown').innerHTML =
+            '<span>💒</span> <span>We\'re Married!</span>';
     }
 }
 
-// Ensure DOM is loaded before starting countdown
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    });
-} else {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-}
+// document.addEventListener('DOMContentLoaded', function() {
+//     updateCountdown();
+//     setInterval(updateCountdown, 1000);
+// });
 
+
+// // Ensure DOM is loaded before starting countdown
+// if (document.readyState === 'loading') {
+//     document.addEventListener('DOMContentLoaded', function() {
+//         updateCountdown();
+//         setInterval(updateCountdown, 1000);
+//     });
+// } else {
+//     updateCountdown();
+//     setInterval(updateCountdown, 1000);
+// }
+setTimeout(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
 
 /*
     RSVP
@@ -507,36 +469,3 @@ audio.addEventListener('ended', function() {
 window.addEventListener('click', function() {
     startPlaylist();
 }, { once: true });
-
-// ===========================
-// MOBILE TOUCH SUPPORT FOR CAROUSEL
-// ===========================
-let touchStartX = 0;
-let touchEndX = 0;
-
-const carouselContainer = document.querySelector('.carousel-container');
-
-if (carouselContainer) {
-    carouselContainer.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    carouselContainer.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-}
-
-function handleSwipe() {
-    const swipeThreshold = 50; // Minimum swipe distance
-    
-    if (touchEndX < touchStartX - swipeThreshold) {
-        // Swipe left - next slide
-        moveCarousel(1);
-    }
-    
-    if (touchEndX > touchStartX + swipeThreshold) {
-        // Swipe right - previous slide
-        moveCarousel(-1);
-    }
-}
