@@ -1097,6 +1097,11 @@ footer {
         text-align: right;
     }
     
+    .last-name {
+        font-size: 2em;
+        padding-left: clamp(100px, 15vw, 200px); /* Responsive padding */
+    }
+    
     .first-names {
         font-size: 2em;
     }
@@ -1304,8 +1309,9 @@ footer {
     }
     
     .last-name {
-        padding-left: 400px;
+        padding-left: clamp(200px, 25vw, 400px); /* Responsive padding */
     }
+    
     
     .hero-date {
         font-size: 24px;
@@ -1409,7 +1415,7 @@ footer {
 /* Extra Large Screens (min-width: 1440px) */
 @media (min-width: 1440px) {
     .last-name {
-        padding-left: 900px;
+        padding-left: clamp(400px, 35vw, 900px); /* Responsive padding */
     }
     
     .ceremony-section, .reception-section {
