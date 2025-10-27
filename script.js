@@ -110,25 +110,6 @@ window.addEventListener('scroll', () => {
 });
 
 // ===========================
-// DATE COUNTDOWN (Optional)
-// ===========================
-function updateCountdown() {
-    const weddingDate = new Date('2025-10-14T16:00:00').getTime();
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-    
-    if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // You can add a countdown element to display this
-        console.log(`${days}d ${hours}h ${minutes}m ${seconds}s until the wedding!`);
-    }
-}
-
-// ===========================
 // CAROUSEL
 // ===========================
 let currentSlide = 0;
