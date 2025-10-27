@@ -201,8 +201,8 @@
                     </div>
                 </div>
                 
-                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
-                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                <button class="carousel-btn prev" onclick="setInterval(moveCarousel(-1),1000)">❮</button>
+                <button class="carousel-btn next" onclick="setInterval(moveCarousel,1000)">❯</button>
                 
                 <div class="carousel-indicators">
                     <span class="carousel-dot active" onclick="goToSlide(0)"></span>
