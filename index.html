@@ -11,19 +11,21 @@
 </head>
 <body>
     <!-- Navigation -->
-    <!-- <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-left">
-            <a href="#story">Our Story</a>
-            <a href="#travel">Travel & Stay</a>
-            <a href="#registry">Registry</a>
+            <a href="#venue">Venue</a>
+            <a href="#dresscode">Dress Code</a>
+            <a href="#registry">Gift</a>
+            
         </div>
         <div class="nav-center">
             <a href="#home" class="nav-title">G&E 01.22.26</a>
         </div>
         <div class="nav-right">
-            <a href="#rsvp" class="btn-rsvp"> RSVP</a>
+            <a href="#registry">FAQ</a>
         </div>
-    </nav> -->
+        
+    </nav>
   
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -40,9 +42,9 @@
     </section>
 
     <!-- Join Us / RSVP Section -->
-    <section id="rsvp" class="story-section">
+    <section id="savedate" class="story-section">
         <div class="join-overlay">
-            <p class="join-subtitle">Join Us</p>
+            <p class="join-subtitle">It is</p>
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
                     <span class="countdown-number" id="days">0</span>
@@ -61,21 +63,22 @@
                     <span class="countdown-label">Seconds</span>
                 </div>
             </div>
-            <h2 class="join-title">We hope you can make it!</h2>
-            <p class="join-subtitle">Kindly reply on or before <b style="color:  #881030;">December 29, 2025</b> to confirm your presence on our special day.</p>
-      
-            <a href="#rsvp" class="btn-dark" id="openRSVP">RSVP</a>
-            <br></br>
-            <p class="join-subtitle">Click RSVP button to respond.</p>
-            
-
+            <p class="join-subtitle">before</p>
+  
+            <!-- Replace your date button with this -->
+            <div class="elegant-date-circle" onclick="addToCalendar()" style="cursor: pointer;">
+                <span class="date-month">January</span>
+                <span class="date-day">22</span>
+                <span class="date-year">2026</span>
+            </div>
+            <h2 class="join-title">Save the Date!</h2>
         </div>
     </section>
-    <section id="photo" class="photo-section">
+    <!-- <section id="photo" class="photo-section">
         <div class="container">
             <img src="photos/MS_DSC04191.jpg" alt="Special Moment" class="fullwidth-photo">
         </div>
-    </section>
+    </section> -->
 
     <!-- Ceremony Section -->
     <section id="ceremony" class="ceremony-section">
@@ -117,8 +120,6 @@
         </div>
     </section>
 
-      <audio id="bgMusic"></audio>
-
     <!-- Dress Code Section -->
     <section id="dresscode" class="dresscode-section">
     <div class="container">
@@ -150,7 +151,6 @@
         <p class="dress-desc">Gentlemen: Black/Silver Gray Suit and Tie</p>
         <a href="https://pin.it/6DeV5Wwzf" class="dresscode-link">Dress Reference</a>
       </div>
-      <p class="dress-hint"><b>Please</b> avoid wearing white and overly casual attire (jeans, shorts & sneakers).</p>
     </div>
 
     <div class="dresscode-video-card">
@@ -163,6 +163,280 @@
   </div>
 </section>
 
+   <!-- Schedule Section -->
+<!-- Schedule Section -->
+<section class="schedule-section">
+  <div class="container">
+    <h2 class="section-title">Schedule of Activities</h2>
+    <p class="section-subtitle">January 22, 2026</p>
+    
+    <div class="timeline">
+      <!-- Church Ceremony -->
+      <div class="timeline-item" data-aos="fade-up">
+        <span class="timeline-time">3:00 PM</span>
+        <div class="timeline-content">
+          <h3>Church Ceremony</h3>
+          <p>Exchange of vows and celebration of marriage</p>
+          <span class="timeline-location">Please be at the church venue before then</span>
+        </div>
+      </div>
+
+      <!-- Refreshments -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="timeline-time">4:30 PM - 06:00 PM</span>
+        <div class="timeline-content">
+          <h3>Refreshments & Snacks</h3>
+          <p>Light bites and drinks to celebrate</p>
+          <span class="timeline-location">Time to transfer to reception venue and some tea time</span>
+        </div>
+      </div>
+
+      <!-- Reception Program -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="timeline-time">6:00 PM</span>
+        <div class="timeline-content">
+          <h3>Reception Program</h3>
+          <p>Heartfelt toasts</p>
+          <span class="timeline-location">Honoring the bride and the groom</span>
+        </div>
+      </div>
+
+      <!-- Dinner -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="timeline-time">7:00 PM</span>
+        <div class="timeline-content">
+          <h3>Dinner</h3>
+          <p>Celebration dinner</p>
+          <span class="timeline-location">Time to fill our body with food and happiness</span>
+        </div>
+      </div>
+
+      <!-- Entertainment -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="timeline-time">08:30 PM</span>
+        <div class="timeline-content">
+          <h3>Entertainment & Dances</h3>
+          <p>First dance, party, and dance the night away!</p>
+          <span class="timeline-location">Dance Floor</span>
+        </div>
+      </div>
+
+      <!-- End -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <span class="timeline-time">10:00 PM</span>
+        <div class="timeline-content">
+          <h3>Reception End</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    
+    <div class="faq-container">
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question">
+          What is the dress code?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Formal attire. We suggest cocktail or long dresses for ladies and suits or tuxedos for gentlemen. Please avoid wearing white and overly casual attire (jeans, shorts & sneakers). Check <b style="color:  #881030;"><a href="#dresscode">here</a></b> for our color theme and dress references.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+        <button class="faq-question">
+          Will transportation be provided?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! Shuttle service will be available between the church and reception venue. Also, from Bai Hotel to Church. Pickup times will be shared closer to the date.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+        <button class="faq-question">
+          Can I bring a plus one?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Due to limited capacity, we can only accommodate guests formally invited on your invitation. Please check your invitation for details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <button class="faq-question">
+          Are children welcome?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>While we love your little ones, this will be an adults-only celebration. We hope this allows you to relax and enjoy the evening!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+        <button class="faq-question">
+          What about dietary restrictions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Please let us know of any dietary restrictions or allergies when you RSVP, and we'll ensure appropriate meal options are available.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+        <button class="faq-question">
+          Where should we park?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Parking is be available at both the church and reception venue.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+        <button class="faq-question">
+          Is there a wedding registry?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Your presence is the greatest gift! However, if you wish to honor us with a gift, we have <b style="color:  #881030;"><a href="#registry">receiving gifts account here</a></b> or cash gifts are also appreciated.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+        <button class="faq-question">
+          Will the ceremony be indoors or outdoors?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The ceremony will be held indoors at the church. The reception will also be indoors just 3 minutes drive from the church.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Replace your current registry section with this corrected version -->
+<section class="registry-section" id="registry">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="divider"></div>
+            <h2>Gift Registry</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <!-- Registry Content -->
+        <div class="registry-content">
+            <p class="registry-subtitle">Your presence at our wedding is the greatest gift of all.</p>
+            <p class="registry-message">However, if you wish to honor us with a gift, we would be grateful for a contribution towards our future together.</p>
+            
+            <!-- Payment Cards Grid -->
+            <div class="registry-grid">
+                <!-- Bank Transfer Card -->
+                <div class="registry-card">
+                    <div class="registry-card-header">
+                        <div class="payment-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                                <line x1="2" y1="10" x2="22" y2="10"/>
+                            </svg>
+                        </div>
+                        <h3 class="payment-title">Bank Transfer</h3>
+                        <p class="payment-name">Greggy & Elisha Niña</p>
+                    </div>
+                    
+                    <div class="qr-code-container">
+                        <div class="qr-placeholder">
+                            <img src="photos/gregbpi.jpg" alt="Bank Transfer QR Code" class="qr-code-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="qr-placeholder-text" style="display:none;">Bank QR Code<br>Coming Soon</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bank-details">
+                        <p class="bank-info">
+                            <span class="label">Bank:</span>
+                            <span>BPI</span>
+                        </p>
+                        <p class="bank-info">
+                            <span class="label">Account:</span>
+                            <span>9269120891</span>
+                        </p>
+                        <p class="bank-info">
+                            <span class="label">Name:</span>
+                            <span>Greggy Tambis</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Digital Wallet Card -->
+                <div class="registry-card">
+                    <div class="registry-card-header">
+                        <div class="payment-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="payment-title">GCash / PayMaya</h3>
+                        <p class="payment-name">+63 9457659603</p>
+                    </div>
+                    
+                    <div class="qr-code-container">
+                        <div class="qr-placeholder">
+                            <img src="photos/gcashnin.jpg" alt="GCash QR Code" class="qr-code-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="qr-placeholder-text" style="display:none;">GCash QR Code<br>Coming Soon</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bank-details">
+                        <p class="bank-info">
+                            <span class="label">Service:</span>
+                            <span>GCash / PayMaya</span>
+                        </p>
+                        <p class="bank-info">
+                            <span class="label">Phone:</span>
+                            <span>+63 9457659603</span>
+                        </p>
+                        <p class="bank-info">
+                            <span class="label">Name:</span>
+                            <span>Elisha Niña</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registry Note -->
+            <div class="registry-note">
+                <p>Scan the QR code with your mobile banking app or digital wallet to send a gift directly.</p>
+                <p class="registry-gratitude">Thank you for your love and generosity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Decorative Hearts -->
+    <div class="registry-decoration left-decoration">
+        <span class="decoration-heart">♥</span>
+        <span class="decoration-heart">♥</span>
+        <span class="decoration-heart">♥</span>
+    </div>
+    <div class="registry-decoration right-decoration">
+        <span class="decoration-heart">♥</span>
+        <span class="decoration-heart">♥</span>
+        <span class="decoration-heart">♥</span>
+    </div>
+</section>
+
+      <audio id="bgMusic"></audio>
+
+    
+
 
     <div class="floating-element">
         <div class="heart">♥</div>
@@ -170,6 +444,68 @@
         <div class="heart">♥</div>
     </div>
 
+
+        <!-- <section id="photo" class="photo-section">
+        <div class="container">
+            <img src="photos/MS_DSC04191.jpg" alt="Special Moment" class="fullwidth-photo">
+        </div>
+    </section> -->
+
+
+    <!-- Join Us / RSVP Section -->
+    <!-- <section id="rsvp" class="rsvp-section">
+  
+        <center>
+        <div class="join-overlay">
+            <h2 class="join-title">Join Us</h2>
+            <p class="join-subtitle">We hope you can make it!</p>
+            <p class="join-subtitle">Kindly reply on or before <b style="color:  #881030;">December 29, 2025</b> to confirm your presence on our special day.</p>
+            <a href="#rsvp" class="btn-dark" id="openRSVP">RSVP</a>
+            <br></br>
+            <p class="join-subtitle">Click RSVP button to respond.</p>
+            
+        </div>
+        </center>
+    </section> -->
+
+    <!-- RSVP Section -->
+<section id="rsvp" class="rsvp-final-section">
+    <div class="rsvp-container">
+        <div class="rsvp-content-wrapper">
+            <!-- Decorative Elements -->
+            <div class="rsvp-decor-top">♥</div>
+            
+            <!-- Main Content -->
+            <h2 class="rsvp-main-title">We Hope You Can Make It!</h2>
+            
+            <div class="rsvp-divider-line"></div>
+            
+            <p class="rsvp-invitation-text">
+                Your presence would mean the world to us as we celebrate our special day.
+            </p>
+            
+            <div class="rsvp-deadline-box">
+                <p class="rsvp-deadline-label">Please RSVP by</p>
+                <p class="rsvp-deadline-date">December 29, 2025</p>
+            </div>
+            
+            <!-- RSVP Button -->
+            <a href="#rsvp" class="btn-rsvp-main" id="openRSVP">
+                <span class="btn-rsvp-text">RSVP Now</span>
+                <span class="btn-rsvp-icon">→</span>
+            </a>
+            
+            <p class="rsvp-hint-text">Click the button above to confirm your attendance</p>
+            
+            <!-- Decorative Elements -->
+            <div class="rsvp-decor-bottom">
+                <span class="rsvp-heart-small">♥</span>
+                <span class="rsvp-dot">•</span>
+                <span class="rsvp-heart-small">♥</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id = "carousel" class="carousel-section">
         <div class="container">
@@ -212,20 +548,8 @@
             </div>
         </div>
     </section>
-
-      <!-- Story Section -->
-    <!-- <section id="story" class="story-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="divider"></div>
-                <h2>See how it all started</h2>
-                <div class="divider"></div>
-            </div>
-            <button class="btn-dark">Our Story</button>
-        </div>
-    </section> -->
-
     <!-- RSVP Modal -->
+<!---
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal-content">
         <button class="modal-close-btn" onclick="closeModal()">✕</button>
@@ -258,7 +582,93 @@
             </div>
         </form>
     </div>
+</div> -->
+
+<!-- RSVP Modal - Revamped -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content-rsvp">
+        <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        
+        <!-- Modal Header -->
+        <div class="modal-header-rsvp">
+            <div class="modal-icon-rsvp">💌</div>
+            <h2 class="modal-title-rsvp">RSVP</h2>
+            <p class="modal-subtitle-rsvp">Please confirm your attendance</p>
+        </div>
+        
+        <!-- Modal Body -->
+        <form class="rsvp-form-main" id="rsvpForm">
+            <div class="alert-message" id="alertMessage"></div>
+            
+            <!-- Search Section -->
+            <div class="form-group-rsvp">
+                <label for="searchName" class="form-label-rsvp">
+                    <span class="label-icon">👤</span>
+                    Search Your Name
+                </label>
+                <input 
+                    type="text" 
+                    id="searchName" 
+                    name="searchName" 
+                    class="form-input-rsvp"
+                    placeholder="Start typing your name..." 
+                    autocomplete="off" 
+                    required>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Guest Details Section -->
+            <div class="guest-details-rsvp" id="guestDetails">
+                <div id="selectedGuest"></div>
+                
+                <!-- Form Fields -->
+                <div id="rsvpFormFields">
+                    <div class="form-group-rsvp">
+                        <label for="contactInput" class="form-label-rsvp">
+                            <span class="label-icon">📱</span>
+                            Contact (Facebook/Messenger)
+                        </label>
+                        <input 
+                            type="text" 
+                            id="contactInput" 
+                            name="contact" 
+                            class="form-input-rsvp"
+                            placeholder="Your Facebook or Messenger handle" 
+                            required>
+                    </div>
+                    
+                    <div class="form-group-rsvp">
+                        <label for="attendance" class="form-label-rsvp">
+                            <span class="label-icon">✨</span>
+                            Will you be attending?
+                        </label>
+                        <select id="attendance" name="attendance" class="form-select-rsvp" required>
+                            <option value="">Please select</option>
+                            <option value="yes">Yes, I'll be there! 🎉</option>
+                            <option value="no">Sorry, can't make it 💔</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="rsvp-submit-btn">
+                        <span class="btn-text">Confirm RSVP</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+<!-- Success/Thank You Modal -->
+<div class="modal-overlay" id="thankYouModal">
+    <div class="modal-content-thankyou">
+        <button class="modal-close-btn" onclick="closeThankYouModal()">✕</button>
+        <div class="thankyou-content" id="thankYouContent">
+            <!-- Dynamic content will be inserted here -->
+        </div>
+    </div>
+</div>
+
 
     <!-- Footer -->
     <footer>
