@@ -3300,3 +3300,406 @@ footer {
         font-size: 13px;
     }
 }
+
+/* ===========================
+   ENTOURAGE SECTION - FIXED VERSION
+   Add this to the END of your styles.css file
+   =========================== */
+
+.entourage-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(136, 16, 48, 0.95) 0%, rgba(100, 10, 35, 0.98) 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: visible;
+    display: block;
+    width: 100%;
+}
+
+/* Subtle decorative background pattern */
+.entourage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.entourage-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+    display: block;
+}
+
+.entourage-section .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.entourage-section .section-header h2 {
+    color: #ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-size: 56px;
+    font-weight: 400;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.entourage-section .divider {
+    width: 100px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Family Name */
+.entourage-family-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    display: block;
+}
+
+/* Parents Section */
+.entourage-parents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.parent-group {
+    padding: 20px;
+    display: block;
+}
+
+/* Role Titles */
+.entourage-role-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+}
+
+/* Section Titles (Principal Sponsors, Secondary Sponsors) */
+.entourage-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 0;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 15px;
+    display: block;
+}
+
+.entourage-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Names */
+.entourage-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+}
+
+/* Cross Icon for deceased */
+.cross-icon {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 5px;
+}
+
+/* Entourage Blocks */
+.entourage-block {
+    margin-bottom: 50px;
+    text-align: center;
+    display: block;
+}
+
+.entourage-block.centered {
+    margin-bottom: 40px;
+}
+
+/* Sponsors Intro (for single-column names) */
+.sponsors-intro {
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Sponsors Grid (two columns) */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: center;
+}
+
+.sponsor-column {
+    text-align: center;
+    display: block;
+}
+
+/* Honor Party (Best Man & Maid of Honor) */
+.entourage-honor-party {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.honor-group {
+    padding: 20px;
+    display: block;
+}
+
+/* Party Grid (Groomsmen & Bridesmaids) */
+.entourage-party-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.party-group {
+    padding: 20px;
+    display: block;
+}
+
+/* Secondary Sponsors Grid */
+.secondary-sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.secondary-group {
+    padding: 15px;
+    display: block;
+}
+
+.secondary-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+}
+
+/* Bearers Grid */
+.bearers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.bearer-group {
+    padding: 15px;
+    display: block;
+}
+
+/* Flower Girls Grid */
+.flower-girls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.flower-column {
+    text-align: center;
+    display: block;
+}
+
+/* Decorative Element */
+.entourage-decoration {
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+}
+
+.entourage-decoration .decoration-heart {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    animation: heartPulse 3s ease-in-out infinite;
+}
+
+/* ===========================
+   ENTOURAGE RESPONSIVE
+   =========================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .entourage-section {
+        padding: 60px 20px;
+    }
+
+    .entourage-section .section-header h2 {
+        font-size: 46px;
+    }
+
+    .entourage-family-name {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .entourage-parents,
+    .entourage-honor-party,
+    .entourage-party-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .secondary-sponsors-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .bearers-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .flower-girls-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .entourage-role-title {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .entourage-section-title {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+
+    .entourage-name {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .entourage-section {
+        padding: 50px 15px;
+    }
+
+    .entourage-section .section-header h2 {
+        font-size: 38px;
+    }
+
+    .entourage-section .divider {
+        width: 60px;
+    }
+
+    .entourage-family-name {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+
+    .entourage-role-title {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+    }
+
+    .entourage-section-title {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .secondary-role {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .entourage-name {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .entourage-block,
+    .entourage-parents,
+    .entourage-honor-party,
+    .entourage-party-grid {
+        margin-bottom: 40px;
+    }
+
+    .parent-group,
+    .honor-group,
+    .party-group {
+        padding: 15px 10px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .entourage-section .section-header h2 {
+        font-size: 32px;
+    }
+
+    .entourage-family-name {
+        font-size: 16px;
+    }
+
+    .entourage-name {
+        font-size: 13px;
+    }
+}
